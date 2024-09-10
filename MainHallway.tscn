@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/2dClassroomAssetPackByStyloo/WallFloorDoor second version tiling/strokespritesheet20125.png" type="Texture" id=1]
+[ext_resource path="res://Assets/2dClassroomAssetPackByStyloo/WallFloorDoor second version tiling/strokespritesheet20123.png" type="Texture" id=2]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/2dClassroomAssetPackByStyloo/WallFloorDoorWstroke/Wallfloordoorw First Spritesheet 8.png" type="Texture" id=4]
+[ext_resource path="res://Door1.gd" type="Script" id=5]
+[ext_resource path="res://MainHallway.gd" type="Script" id=6]
+
+[sub_resource type="TileSet" id=1]
+0/name = "strokespritesheet20123.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 64, 64, 224, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.575, 77.6723 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 124, 48 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="FloorTileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( -2, 0, 0, -65535, 0, 0, -65532, 0, 0, -65529, 0, 0, -65526, 0, 0, -65525, 0, 0, 4, 0, 0, 131070, 0, 0, 65537, 0, 0, 65543, 0, 0, 65546, 0, 0, 65547, 0, 0, 131076, 0, 0, 262142, 0, 0, 196609, 0, 0, 196615, 0, 0, 196618, 0, 0, 196619, 0, 0, 262148, 0, 0, 393214, 0, 0, 327681, 0, 0, 327684, 0, 0, 327687, 0, 0, 327690, 0, 0, 327691, 0, 0, 524286, 0, 0, 458753, 0, 0, 458756, 0, 0, 458759, 0, 0, 458762, 0, 0, 458763, 0, 0 )
+
+[node name="Wallsprite" type="Sprite" parent="."]
+position = Vector2( 204, 213 )
+scale = Vector2( 0.651639, 1.00254 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 76.848, 738.207, 244.189, 200 )
+
+[node name="Wallsprite2" type="Sprite" parent="."]
+position = Vector2( 592.5, 212.063 )
+scale = Vector2( 0.586066, 1.02475 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 76.8479, 738.207, 244.189, 197.461 )
+
+[node name="Doorsprite1" type="Sprite" parent="."]
+position = Vector2( 0.243156, 236.25 )
+scale = Vector2( 1.23579, 0.996875 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 839, 56, 87, 160 )
+
+[node name="OpenDoorSprite1" type="Sprite" parent="Doorsprite1"]
+position = Vector2( -394.277, 80 )
+scale = Vector2( 0.879972, 0.844823 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 821.85, 34.729, 115.9, 199.5 )
+
+[node name="Area2D" type="Area2D" parent="Doorsprite1"]
+collision_layer = 2
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doorsprite1/Area2D"]
+position = Vector2( 5.87224, -3.69113 )
+shape = SubResource( 2 )
+
+[node name="Doorsprite2" type="Sprite" parent="."]
+position = Vector2( 414.5, 236 )
+scale = Vector2( 1.22989, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 839, 56, 87, 160 )
+
+[node name="OpenDoorSprite2" type="Sprite" parent="Doorsprite2"]
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 0.243156, 236.25 )
+scale = Vector2( 1.23579, 0.996875 )
+collision_layer = 2
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 335.621, -0.250792 )
+shape = SubResource( 2 )
+
+[node name="Doorsprite3" type="Sprite" parent="."]
+position = Vector2( 785, 237 )
+scale = Vector2( 1.12895, 0.985156 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 839, 56, 87, 160 )
+
+[node name="Area2D3" type="Area2D" parent="Doorsprite3"]
+position = Vector2( -695.121, -0.761292 )
+scale = Vector2( 1.09464, 1.0119 )
+collision_layer = 2
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doorsprite3/Area2D3"]
+position = Vector2( 630.979, -0.250792 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 207 )
+scale = Vector2( 1.01613, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 76.493, 359.73, 248.116, 200 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 420, 213.5 )
+scale = Vector2( 1.15323, 1.03535 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 76.493, 359.73, 248.116, 198.903 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 788, 214.5 )
+scale = Vector2( 1, 1.02525 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 76.493, 359.73, 248.116, 198.903 )
+
+[node name="Character" parent="." instance=ExtResource( 3 )]
+position = Vector2( -156, 51 )
+
+[connection signal="body_entered" from="Doorsprite1/Area2D" to="Doorsprite1/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Doorsprite3/Area2D3" to="Doorsprite3/Area2D3" method="_on_Area2D_body_entered"]
